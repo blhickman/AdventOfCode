@@ -1,4 +1,4 @@
-####Advent of Code Day 1 Part 2
+####Advent of Code Day 1 Part 2 Copied from Andrew
 ####Load input data
 inputdata = open("C:\\PythonPrograms\\Advent1.txt", "r").read().split()
 ##### Create sequence integer array with sequence
