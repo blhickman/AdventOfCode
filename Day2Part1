@@ -1,0 +1,25 @@
+#### Establish variables to be used
+box_codes = open("C:\PythonPrograms\Advent2.txt").read().split()
+two_count = 0
+three_count = 0
+split_box = []
+#### loop through each box code and break each code into a list for evaluation.
+for x in range(len(box_codes)):
+  two_count_check = 0
+  three_count_check = 0
+  split_box = list(box_codes[x])
+#### get a count of each elements number of appearances in the single box code.
+  for y in range(len(split_box)):
+#### if current letter of the box code is the first count of two for this box, increase two_count, same for three count.
+#### once a letter has been found to have exactly two occurences we will ignore the count for two, same for three count.
+    if box_codes[x].count(split_box[y]) == 2 and two_count_check == 0:
+      two_count = two_count + 1
+      two_count_check = 1
+    if box_codes[x].count(split_box[y]) == 3 and three_count_check == 0:
+      three_count = three_count + 1 
+      three_count_check = 1
+#### if we have found a letter to meet criteria for two count and for three count we can break the loop and save some time.
+    if (two_count_check + three_count_check) == 2:
+      break
+#### check sum for our advent answer
+print(two_count * three_count)
