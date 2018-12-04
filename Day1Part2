@@ -1,0 +1,19 @@
+####Advent of Code Day 1 Part 2
+####Load input data
+inputdata = open("C:\\PythonPrograms\\Advent1.txt", "r").read().split()
+##### Create sequence integer array with sequence
+newsequence = []
+for line in inputdata:
+    newsequence.append(int(line))
+frequency = 0
+resultlist = []
+cycles = 0
+while resultlist.count(frequency) != 2:
+    cycles = cycles + 1
+    print(cycles)
+    for n in range(len(newsequence)):
+        frequency = frequency + newsequence[n]
+        resultlist.append(frequency)
+        if resultlist.count(frequency) == 2:
+            print("Calibration frequency is " + str(frequency))
+            break
